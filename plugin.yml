@@ -7,4 +7,3 @@ author: AlexItz16
 commands:
  coreui:
   description: "Open CoreUI"
-  permission: coreui.command 

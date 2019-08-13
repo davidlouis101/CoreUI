@@ -88,7 +88,7 @@ class Main extends PluginBase implements Listener {
             });
             $form->setTitle("§7-= §l§eCoreUI§r §7=-");
 			$form->setContent("§o§7MiniCoreUI By AlexItz16");
-            $form->addButton("§l§eFly on\n§r§o§7Tap to Select");
+                        $form->addButton("§l§eFly on\n§r§o§7Tap to Select");
 			$form->addButton("§l§eFly off\n§r§o§7Tap to Select");
 			$form->addButton("§l§eHeal\n§r§o§7Tap to Select");
 			$form->addButton("§l§eFeed\n§r§o§7Tap to Select");

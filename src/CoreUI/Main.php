@@ -56,7 +56,7 @@ class Main extends PluginBase implements Listener {
             $sender->setAllowFlight(true);
                 break;
                 case 1:
-            $sender->sendMessage(TextFormat::YELLOW . "Enabled flight mode!");
+            $sender->sendMessage(TextFormat::YELLOW . "Disabled flight mode!");
             $sender->setAllowFlight(false);
                 break;				
                 case 2:

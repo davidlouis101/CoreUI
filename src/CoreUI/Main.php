@@ -78,8 +78,12 @@ class Main extends PluginBase implements Listener {
                 case 6:
             $sender->setGameMode(3);
             $sender->sendMessage(TextFormat::YELLOW . "GameMode changed to §9Spectator");
-                break;				
-                case 7:
+                break;			
+		case 7:
+            $sender->addEffect(new EffectInstance(Effect::getEffect(Effect::INVISIBILITY), 99999999, 0, false));
+            $sender->sendMessage(TextFormat::YELLOW . "Vanish Enabled");
+                break;		    
+                case 8:
             $sender->sendMessage(TextFormat::YELLOW . "CoreUI Closed");
                 break;				
             }
@@ -88,13 +92,14 @@ class Main extends PluginBase implements Listener {
             });
             $form->setTitle("§7-= §l§eCoreUI§r §7=-");
 			$form->setContent("§o§7MiniCoreUI By AlexItz16");
-                        $form->addButton("§l§eFly on\n§r§o§7Tap to Select");
-			$form->addButton("§l§eFly off\n§r§o§7Tap to Select");
-			$form->addButton("§l§eHeal\n§r§o§7Tap to Select");
-			$form->addButton("§l§eFeed\n§r§o§7Tap to Select");
-			$form->addButton("§l§eCreative\n§r§o§7Tap to Select");
-			$form->addButton("§l§eAdventure\n§r§o§7Tap to Select");
-			$form->addButton("§l§eSpectator\n§r§o§7Tap to Select");
+                        $form->addButton("§l§eFly on\n§r§o§7Tap to Activate Fly");
+			$form->addButton("§l§eFly off\n§r§o§7Tap to Disable Fly");
+			$form->addButton("§l§eHeal\n§r§o§7Tap to Heal");
+			$form->addButton("§l§eFeed\n§r§o§7Tap to Eat");
+			$form->addButton("§l§eCreative\n§r§o§7Tap to change GM");
+			$form->addButton("§l§eAdventure\n§r§o§7Tap to change GM");
+			$form->addButton("§l§eSpectator\n§r§o§7Tap to change GM");
+	     		$form->addButton("§l§eVanish\n§r§o§7Tap for Vanish");
 			
             $form->addButton("§l§6CLOSE");
             $form->sendToPlayer($sender);

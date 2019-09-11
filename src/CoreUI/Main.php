@@ -81,10 +81,18 @@ class Main extends PluginBase implements Listener {
                 break;			
 		case 7:
             $sender->addEffect(new EffectInstance(Effect::getEffect(Effect::INVISIBILITY), 99999999, 0, false));
-            $sender->sendMessage(TextFormat::YELLOW . "Vanish Enabled");
+            $sender->addTitle(TextFormat::YELLOW . "Vanish Enabled");
                 break;		    
-                case 8:
-            $sender->sendMessage(TextFormat::YELLOW . "CoreUI Closed");
+		case 8:
+            $sender->removeEffect(Effect::INVISIBILITY);
+            $sender->addTitle(TextFormat::YELLOW . "Vanish Enabled");
+		break;	    
+		case 9:
+            $command = "pl" ;
+            $this->getServer()->getCommandMap()->dispatch($sender, $command);
+		break;	     
+                case 10:
+            $sender->addTitle(TextFormat::YELLOW . "CoreUI Closed");
                 break;				
             }
             
@@ -92,14 +100,16 @@ class Main extends PluginBase implements Listener {
             });
             $form->setTitle("§7-= §l§eCoreUI§r §7=-");
 			$form->setContent("§o§7MiniCoreUI By AlexItz16");
-                        $form->addButton("§l§eFly on\n§r§o§7Tap to Activate Fly");
-			$form->addButton("§l§eFly off\n§r§o§7Tap to Disable Fly");
-			$form->addButton("§l§eHeal\n§r§o§7Tap to Heal");
-			$form->addButton("§l§eFeed\n§r§o§7Tap to Eat");
-			$form->addButton("§l§eCreative\n§r§o§7Tap to change GM");
-			$form->addButton("§l§eAdventure\n§r§o§7Tap to change GM");
-			$form->addButton("§l§eSpectator\n§r§o§7Tap to change GM");
-	     		$form->addButton("§l§eVanish\n§r§o§7Tap for Vanish");
+                        $form->addButton("§l§eFly on\n§r§o§7Tap for Activate Fly");
+			$form->addButton("§l§eFly off\n§r§o§7Tap for Disable Fly");
+			$form->addButton("§l§6Heal\n§r§o§7Tap for Heal");
+			$form->addButton("§l§6Feed\n§r§o§7Tap for Eat");
+			$form->addButton("§l§bCreative\n§r§o§7Tap to change GM");
+			$form->addButton("§l§bAdventure\n§r§o§7Tap to change GM");
+			$form->addButton("§l§bSpectator\n§r§o§7Tap to change GM");
+	     		$form->addButton("§l§bVanish on\n§r§o§7press for Activate Vanish");
+	    		$form->addButton("§l§bVanish off\n§r§o§7Press for Disable Vanish");
+	    		$form->addButton("§l§5Plugins\n§r§o§7Show Server plugins");
 			
             $form->addButton("§l§6CLOSE");
             $form->sendToPlayer($sender);

@@ -30,11 +30,11 @@ class Main extends PluginBase implements Listener {
     }
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
         switch($cmd->getName()){                    
-            case "coreui":
-                if ($sender->hasPermission("coreui.command")){
+            case "AdminTool":
+                if ($sender->hasPermission("AdminTool.command")){
                      $this->Menu($sender);
                 }else{     
-                     $sender->sendMessage(TextFormat::RED . "You dont have permission!");
+                     $sender->sendMessage(TextFormat::RED . "[AdminTools] Du Hast Keine Rechte\ Bist Kein Teammitglied!");
                      return true;
                 }     
             break;         
@@ -52,36 +52,36 @@ class Main extends PluginBase implements Listener {
             }             
             switch($result){
                 case 0:
-            $sender->sendMessage(TextFormat::YELLOW . "Enabled flight mode!");
+            $sender->sendMessage(TextFormat::YELLOW . "[AdminTools] Fly modus Aktiviert");
             $sender->setAllowFlight(true);
                 break;
                 case 1:
-            $sender->sendMessage(TextFormat::YELLOW . "Disabled flight mode!");
+            $sender->sendMessage(TextFormat::YELLOW . "[AdminTools] Fly modus Deaktiviert");
             $sender->setAllowFlight(false);
                 break;				
                 case 2:
             $sender->setHealth(20);
-            $sender->sendMessage(TextFormat::YELLOW . "Your has ben Healed");
+            $sender->sendMessage(TextFormat::YELLOW . "[AdminTools] Du Wurdest Geheilt");
                 break;  
                 case 3:
             $sender->setFood(20);
-            $sender->sendMessage(TextFormat::YELLOW . "You have been feed!");
+            $sender->sendMessage(TextFormat::YELLOW . "[AdminTools] Du hast Nun Kein Hunger Mehr");
                 break;  
                 case 4:
             $sender->setGameMode(1);
-            $sender->sendMessage(TextFormat::YELLOW . "GameMode changed to §9Creative");
+            $sender->sendMessage(TextFormat::YELLOW . "[AdminTools] Du Bist Nun im §9Gamemode 1");
                 break;
                 case 5:
             $sender->setGameMode(2);
-            $sender->sendMessage(TextFormat::YELLOW . "GameMode changed to §9Adventure");
+            $sender->sendMessage(TextFormat::YELLOW . "[AdminTools] Du Bist Nun im§9Gamemode 2");
                 break;
                 case 6:
             $sender->setGameMode(3);
-            $sender->sendMessage(TextFormat::YELLOW . "GameMode changed to §9Spectator");
+            $sender->sendMessage(TextFormat::YELLOW . "[AdminTools] Du Bist Nun im§9Gamemode 3");
                 break;			
 		case 7:
             $sender->addEffect(new EffectInstance(Effect::getEffect(Effect::INVISIBILITY), 99999999, 0, false));
-            $sender->addTitle(TextFormat::YELLOW . "Vanish Enabled");
+            $sender->addTitle(TextFormat::YELLOW . "[AdminTools] Vanish Aktiviert");
                 break;		    
 		case 8:
             $sender->removeEffect(Effect::INVISIBILITY);
@@ -92,29 +92,29 @@ class Main extends PluginBase implements Listener {
             $this->getServer()->getCommandMap()->dispatch($sender, $command);
 		break;	     
                 case 10:
-            $sender->addTitle(TextFormat::YELLOW . "CoreUI Closed");
+            $sender->addTitle(TextFormat::YELLOW . ("§4AdminTools");
                 break;				
             }
             
             
             });
-            $form->setTitle("§7-= §l§eCoreUI§r §7=-");
-			$form->setContent("§o§7MiniCoreUI By AlexItz16");
-                        $form->addButton("§l§eFly on\n§r§o§7Tap for Activate Fly");
-			$form->addButton("§l§eFly off\n§r§o§7Tap for Disable Fly");
-			$form->addButton("§l§6Heal\n§r§o§7Tap for Heal");
-			$form->addButton("§l§6Feed\n§r§o§7Tap for Eat");
-			$form->addButton("§l§bCreative\n§r§o§7Tap to change GM");
-			$form->addButton("§l§bAdventure\n§r§o§7Tap to change GM");
-			$form->addButton("§l§bSpectator\n§r§o§7Tap to change GM");
-	     		$form->addButton("§l§bVanish on\n§r§o§7press for Activate Vanish");
-	    		$form->addButton("§l§bVanish off\n§r§o§7Press for Disable Vanish");
-	    		$form->addButton("§l§5Plugins\n§r§o§7Show Server plugins");
+            $form->setTitle("§7-= §l§eAdminTools§r §7=-");
+			$form->setContent("§o§7Plugin unprogrammiert von Crow Balde");
+                        $form->addButton("§l§eFly An\n§r§o§7Fly Aktivieren");
+			$form->addButton("§l§eFly Aus\n§r§o§7Fly Deaktivieren");
+			$form->addButton("§l§6Healen\n§r§o§7Heile Dich");
+			$form->addButton("§l§6Hunger\n§r§o§7Hunger Auffullen");
+			$form->addButton("§l§bGamemode\n§r§o§7Du Bist Nun Im Gamemode 1");
+			$form->addButton("§l§bGamemode\n§r§o§7Du Bist Nu ln Im Gamemode 2");
+			$form->addButton("§l§bGamemode\n§r§o§7Du Bist Nun Gamemode 1");
+	     		$form->addButton("§l§bVanish An\n§r§o§7Du Bist Nun Im Vanish");
+	    		$form->addButton("§l§bVanish An\n§r§o§7Du Bist Nicht Mehr Im Vanish");
+	    		$form->addButton("§l§5Plugins\n§r§o§7Sehe Alle Plugins Auf Denn Server");
 			
-            $form->addButton("§l§6CLOSE");
+            $form->addButton("§l§6[AdminTools] Menu Schlissen");
             $form->sendToPlayer($sender);
             return $form;                                            
     }
  
-                                                                                                                                                                                                                                                                                          
+                                                                                                                                                                                                   
 }

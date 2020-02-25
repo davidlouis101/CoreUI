@@ -31,7 +31,7 @@ class Main extends PluginBase implements Listener {
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
         switch($cmd->getName()){                    
             case "AdminTool":
-                if ($sender->hasPermission("AdminTool.command")){
+                if ($sender->hasPermission("coreui.command")){
                      $this->Menu($sender);
                 }else{     
                      $sender->sendMessage(TextFormat::RED . "[AdminTools] Du Hast Keine Rechte\ Bist Kein Teammitglied!");

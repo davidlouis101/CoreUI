@@ -7,7 +7,7 @@
    |_| |_| |_|\___|_| \_\___|\__,_|_/_/   \_\_|\___/_/\_\
                                                          
 */
-namespace CoreUI;
+namespace AdminTools;
 
 use pocketmine\Server;
 use pocketmine\plugin\PluginBase;

@@ -23,10 +23,10 @@ class Main extends PluginBase implements Listener {
 	
     public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);    
-        $this->getLogger()->info(TextFormat::GREEN . "CoreUI Enable");
+        $this->getLogger()->info(TextFormat::GREEN . "AdminTools Aktiviert");
     }
     public function onDisable() {
-        $this->getLogger()->info(TextFormat::RED . "CoreUI Disable");
+        $this->getLogger()->info(TextFormat::RED . "AdminTools Deaktiviert");
     }
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
         switch($cmd->getName()){                    
@@ -52,11 +52,11 @@ class Main extends PluginBase implements Listener {
             }             
             switch($result){
                 case 0:
-            $sender->sendMessage(TextFormat::YELLOW . "[AdminTools] Fly modus Aktiviert");
+            $sender->sendMessage(TextFormat::YELLOW . "[AdminTools] Fly Modus Aktiviert");
             $sender->setAllowFlight(true);
                 break;
                 case 1:
-            $sender->sendMessage(TextFormat::YELLOW . "[AdminTools] Fly modus Deaktiviert");
+            $sender->sendMessage(TextFormat::YELLOW . "[AdminTools] Fly Modus Deaktiviert");
             $sender->setAllowFlight(false);
                 break;				
                 case 2:
